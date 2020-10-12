@@ -1,0 +1,32 @@
+CREATE TABLE persons(
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	percentage INT NOT NULL,
+	age INT,
+	gender VARCHAR(1) NOT NULL,
+	city INT,
+	courses INT,
+	PRIMARY KEY(id)
+)
+
+INSERT INTO persons (name,percentage,age,gender,city,courses) VALUES 
+("Ram Kumar",45,19,"M",1,1),
+("Sarita Kumari",55,22,"F",2,2),
+("Salman Khan",62,20,"M",1,1),
+("Juhi Chawla",47,18,"F",3,1),
+("Anil Kapoor",74,22,"M",1,3),
+("John Abraham",64,21,"M",2,2),
+("Shahid Kapoor",52,20,"M",1,3);
+
+SELECT * FROM
+persons p LEFT JOIN city c
+ON p.city=c.cid
+
+SELECT p.id,p.name,p.percentage,p.age,p.gender,c.cityname
+FROM persons p LEFT JOIN city c
+ON p.city=c.cid
+
+SELECT * FROM
+persons p RIGHT JOIN city c
+ON p.city=c.cid
+
