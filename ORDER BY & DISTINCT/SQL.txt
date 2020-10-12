@@ -1,0 +1,11 @@
+SELECT * FROM student ORDER BY number DESC
+
+SELECT * FROM student ORDER BY subject ASC
+
+SELECT * FROM student ORDER BY number DESC,subject ASC
+
+SELECT DISTINCT subject FROM student
+
+SELECT DISTINCT number FROM student
+
+SELECT DISTINCT number AS Numbers FROM student
