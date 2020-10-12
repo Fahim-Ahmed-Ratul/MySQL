@@ -1,0 +1,8 @@
+SELECT * FROM
+person CROSS JOIN city 
+
+SELECT p.id,p.name AS Name,c.cityname AS City 
+FROM person p CROSS JOIN city c
+
+SELECT * FROM
+person,city 
