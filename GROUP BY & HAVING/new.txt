@@ -1,0 +1,93 @@
+CREATE TABLE person(
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	percentage INT NOT NULL,
+	age INT,
+	gender VARCHAR(1) NOT NULL,
+	city INT NOT NULL,
+	courses INT NOT NULL,
+	PRIMARY KEY(id)
+)
+
+INSERT INTO person (name,percentage,age,gender,city,courses) VALUES 
+("Ram Kumar",45,19,"M",1,1),
+("Sarita Kumari",55,22,"F",2,2),
+("Salman Khan",62,20,"M",1,1),
+("Juhi Chawla",47,18,"F",3,1),
+("Anil Kapoor",74,22,"M",1,3),
+("John Abraham",64,21,"M",2,2),
+("Shahid Kapoor",52,20,"M",1,3);
+
+CREATE TABLE city(
+	cid INT NOT NULL AUTO_INCREMENT,
+	cityname VARCHAR(50) NOT NULL UNIQUE,
+	PRIMARY KEY(cid)
+)
+
+INSERT INTO city(cityname) VALUES 
+("Agra"),
+("Delhi"),
+("Bhopal"),
+("Jaipur"),
+("Noida");
+
+SELECT city,COUNT(city) from person GROUP BY city
+
+SELECT p.city,COUNT(p.city) 
+from  person p INNER JOIN city c 
+ON p.city=c.cid
+GROUP BY p.city
+
+SELECT c.cityname,COUNT(c.cityname) AS Total
+from  person p INNER JOIN city c 
+ON p.city=c.cid
+GROUP BY c.cityname
+
+SELECT c.cityname,COUNT(c.cityname) AS Total
+from  person p INNER JOIN city c 
+ON p.city=c.cid
+WHERE p.age >= 20
+GROUP BY c.cityname
+
+SELECT c.cityname,COUNT(c.cityname) 
+from  person p INNER JOIN city c 
+ON p.city=c.cid
+GROUP BY c.cityname
+ORDER BY COUNT(c.cityname) ASC
+
+SELECT c.cityname,count(c.cityname) AS Total
+FROM person p INNER JOIN city c
+ON p.city=c.cid
+GROUP BY c.cityname
+HAVING COUNT(c.cityname) > 1
+
+SELECT c.cityname,count(c.cityname) AS Total
+FROM person p INNER JOIN city c
+ON p.city=c.cid
+GROUP BY c.cityname
+HAVING count(c.cityname) > 1
+ORDER BY COUNT(c.cityname) ASC
+
+
+CREATE TABLE student(
+	id INT NOT NULL UNIQUE,
+	subject VARCHAR(50) NOT NULL,
+	number INT NOT NULL
+)
+
+INSERT INTO student (id,subject,number) VALUES
+(1,"Physics",10),
+(2,"Physics",20),
+(3,"Physics",30),
+(4,"Physics",40),
+(5,"Physics",50),
+(6,"Physics",60),
+(7,"Math",100),
+(8,"Math",110),
+(9,"Math",120),
+(10,"Math",130),
+(11,"Math",140),
+(12,"Math",150);
+
+SELECT subject,count(DISTINCT(number)) AS TOTAL_ROW,min(number) AS MIN_NUMBER,max(number) AS MAX_NUMBER FROM student GROUP BY subject 
+
