@@ -1,0 +1,22 @@
+CREATE TABLE courses(
+	course_id INT NOT NULL AUTO_INCREMENT,
+	course_name VARCHAR(50) NOT NULL UNIQUE,
+	PRIMARY KEY (course_id)
+)
+
+INSERT INTO courses (course_name) VALUES
+("Btech"),
+("BCA"),
+("MBA");
+
+SELECT * FROM
+person p INNER JOIN city c
+ON p.city=c.cid
+INNER JOIN courses cr
+ON p.courses=cr.course_id;
+
+SELECT p.id,p.name,p.percentage,p.age,p.gender,c.cityname,cr.course_name FROM
+person p INNER JOIN city c
+ON p.city=c.cid
+INNER JOIN courses cr
+ON p.courses=cr.course_id;
