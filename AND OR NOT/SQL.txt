@@ -1,0 +1,7 @@
+SELECT * FROM person WHERE age >= 18 AND age <=21
+
+SELECT * FROM person WHERE age >= 18 AND age <=20
+
+SELECT * FROM person WHERE age >= 18 AND gender = "M"
+
+SELECT * FROM person WHERE age >= 18 AND gender = "M" AND city =2
