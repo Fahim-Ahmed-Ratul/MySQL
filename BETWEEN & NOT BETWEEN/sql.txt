@@ -1,0 +1,7 @@
+SELECT * FROM person WHERE age BETWEEN 18 AND 20
+
+SELECT * FROM person WHERE age NOT BETWEEN 18 AND 20
+
+SELECT * FROM person WHERE id BETWEEN 1 AND 5
+
+SELECT * FROM person WHERE name BETWEEN "A" AND "R" // R er ager word Q porjonto asbe
