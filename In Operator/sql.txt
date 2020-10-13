@@ -1,0 +1,7 @@
+SELECT * FROM person WHERE age=18 OR age=21
+
+SELECT * FROM person WHERE age IN (18,21)
+
+SELECT * FROM person WHERE age NOT IN (18,21)
+
+SELECT * FROM student WHERE subject IN ("Math")
