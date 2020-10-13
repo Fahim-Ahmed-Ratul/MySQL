@@ -1,0 +1,32 @@
+SELECT * FROM person WHERE name LIKE "s%"
+
+SELECT * FROM person WHERE name LIKE "a%"
+
+SELECT * FROM person WHERE name LIKE "ram%"
+
+SELECT * FROM person WHERE name LIKE "rm%"
+
+SELECT * FROM person WHERE name LIKE "%am%"
+
+SELECT * FROM person WHERE name LIKE "r%" OR name LIKE "s%"
+
+SELECT * FROM person WHERE name NOT LIKE "r%" OR name NOT LIKE "s%"
+
+SELECT * FROM person WHERE name NOT LIKE "r%" AND name NOT LIKE "s%"
+
+
+
+SELECT * FROM person WHERE BINARY name LIKE "r%"
+
+SELECT * FROM person WHERE BINARY name LIKE "R%"
+
+SELECT * FROM person WHERE BINARY name LIKE "%ar"
+
+SELECT * FROM person WHERE name LIKE "_am%"
+
+SELECT * FROM person WHERE name LIKE "__m%"
+
+SELECT * FROM person WHERE name LIKE "__m"
+
+SELECT * FROM person WHERE name LIKE "r_m%"
+
